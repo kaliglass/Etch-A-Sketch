@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-    background-color: aqua;
+    background-color: lightcoral;
 }
 .container{
     display: flex;
@@ -9,12 +9,14 @@
     width: 800px;
     justify-content: center;
     margin: 20px;
+    
 }
 
 .parent{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .button{
@@ -30,3 +32,4 @@ button{
     background-color: black;
     font-size: 20px;
 }
+
