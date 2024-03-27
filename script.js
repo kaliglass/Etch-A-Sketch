@@ -1,15 +1,28 @@
 const container = document.querySelector('.container');
+const button = document.querySelector('button');
 
-for (let i = 0; i < 16; i++) {
-    for (let j = 0; j < 16; j++) {
+
+button.addEventListener("click",()=>{
+    let input = prompt("Enter the number of squares");
+    gridNo = Number(input);
+    doStuff(gridNo);
+})
+
+
+
+function doStuff(gridNo){
+    container.textContent = '';
+for (let i = 0; i < gridNo; i++) {
+    for (let j = 0; j < gridNo; j++) {
         const square = document.createElement("div");
-        square.classList.add("square");
-        
+        square.style.width = `${800/gridNo}px`;
+        square.style.height = `${800/gridNo}px`;
+        square.style.border = "1px solid black";
         container.appendChild(square);
         square.addEventListener("mouseover",()=>{
-            // square.setAttribute("style","background-color:blue;");
-            square.style.backgroundColor = "black";
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            square.style.backgroundColor = "#" + randomColor;
         });
     }   
 }
-
+}
